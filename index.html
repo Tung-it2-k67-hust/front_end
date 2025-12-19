@@ -133,7 +133,7 @@ function App() {
   const [editingUser, setEditingUser] = React.useState(null);
 
   const fetchUsers = () => {
-    const url = `http://localhost:3001/api/users?page=${page}&limit=${limit}&search=${search}`;
+    const url = `https://fire-render-11op.onrender.com/api/users?page=${page}&limit=${limit}&search=${search}`;
     fetch(url)
       .then(res => res.json())
       .then(data => {
@@ -156,7 +156,7 @@ function App() {
   }, [searchInput]);
 
   const deleteUser = (id) => {
-    fetch(`http://localhost:3001/api/users/${id}`, {
+    fetch(`https://fire-render-11op.onrender.com/api/users/${id}`, {
       method: "DELETE"
     })
       .then(res => res.json())
@@ -326,8 +326,8 @@ function UserModal({ user, onClose, onSave }) {
       address: formData.address.trim()
     };
     const url = user
-      ? `http://localhost:3001/api/users/${user._id}`
-      : `http://localhost:3001/api/users`;
+      ? `https://fire-render-11op.onrender.com/api/users/${user._id}`
+      : `https://fire-render-11op.onrender.com/api/users`;
     const method = user ? "PUT" : "POST";
     fetch(url, {
       method,
